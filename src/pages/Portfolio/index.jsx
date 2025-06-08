@@ -21,6 +21,10 @@ import {
 } from 'lucide-react';
 import './style.css';
 
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -30,10 +34,10 @@ const Portfolio = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_d8ga6uk',      // from EmailJS dashboard
-      'template_m5grc37',     // from EmailJS dashboard
+      serviceId,      // from EmailJS dashboard
+      templateId,     // from EmailJS dashboard
       formRef.current,
-      'j0QghEpZ1eOeN0ok3' // from EmailJS account settings
+      publicKey // from EmailJS account settings
     )
     .then(
       (result) => {
