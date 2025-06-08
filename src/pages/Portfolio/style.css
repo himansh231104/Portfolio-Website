@@ -1401,6 +1401,11 @@ input[type="email"]:hover {
 }
 
 @media (max-width: 480px) {
+  
+  .hero-text {
+    margin-top: 3rem;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
